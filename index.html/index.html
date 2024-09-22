@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บริจาคผ่านธนาคารกสิกรไทย</title>
+    <style>
+        .donate-section {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .donate-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .donate-button:hover {
+            background-color: #218838;
+        }
+
+        .bank-info {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="donate-section">
+        <h1>สนับสนุนเว็บไซต์ของเรา</h1>
+        <p>ท่านสามารถบริจาคผ่านการโอนเงินไปยังบัญชีธนาคารของเราได้</p>
+
+        <div class="bank-info">
+            <p><strong>ธนาคาร:</strong> กสิกรไทย</p>
+            <p><strong>ชื่อบัญชี:</strong> นายสมชาย ตัวอย่าง</p>
+            <p><strong>หมายเลขบัญชี:</strong> <span id="account-number">123-4-56789-0</span></p>
+        </div>
+
+        <button class="donate-button" onclick="copyAccountNumber()">คัดลอกหมายเลขบัญชี</button>
+    </div>
+
+    <script>
+        function copyAccountNumber() {
+            var accountNumber = document.getElementById("account-number").innerText;
+            navigator.clipboard.writeText(accountNumber).then(function() {
+                alert("คัดลอกหมายเลขบัญชีเรียบร้อยแล้ว!");
+            }, function() {
+                alert("ไม่สามารถคัดลอกหมายเลขบัญชีได้");
+            });
+        }
+    </script>
+
+</body>
+</html>
